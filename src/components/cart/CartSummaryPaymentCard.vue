@@ -1,8 +1,8 @@
 <template>
   <div class="cart-item-card">
-    <h3>Cart Total: ${{ cart_total }}</h3>
+    <p>Cart Total: ${{ cart_total }}</p>
 
-    <button class="view-product-button">Pay by Credit Card</button>
+    <button class="view-product-button">結帳</button>
   </div>
 </template>
 

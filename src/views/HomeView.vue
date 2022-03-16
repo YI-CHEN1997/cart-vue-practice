@@ -13,17 +13,20 @@
       v-on:view-product="viewProduct($event)" />
     </div>
   </div>
+   
+    <FooterComponent/>
 </template>
 
 <script>
 import items from '../data/items.js'
 import ProductSummaryCard from '../components/products/ProductSummaryCard.vue'
 import ProductDescriptionDrawer from '../components/products/ProductDescriptionDrawer.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    ProductSummaryCard, ProductDescriptionDrawer
+    ProductSummaryCard, ProductDescriptionDrawer,FooterComponent
   },
   data() {
     return {
@@ -40,7 +43,7 @@ export default {
       this.active.product_drawer = true
       console.log(this.product)
     },
-    closeProductDrawer(){
+    closeProductDrawer() {
       this.active.product_drawer = false
     }
   },

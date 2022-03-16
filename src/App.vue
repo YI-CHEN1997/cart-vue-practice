@@ -3,23 +3,17 @@
   <header>
     <NavbarComponent/>
   </header>
-  <body>
-    <footer>
-    <FooterComponent/>
-  </footer>
-  </body>
-  
     <router-view/>
   </div>
 </template>
 
 <script>
 import NavbarComponent from '@/components/NavbarComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
+
  export default {
    components:{
      NavbarComponent,
-     FooterComponent
+     
    },
    mounted() {
      this.$store.commit('updateCartFromLocalStorage')
@@ -35,9 +29,5 @@ import FooterComponent from '@/components/FooterComponent.vue'
     padding: 0;
     overflow-x: hidden;
   }
-
-  // body {
-  //   background-color: rgb(245, 245, 245);
-  // }
 
 </style>

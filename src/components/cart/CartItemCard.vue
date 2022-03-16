@@ -1,12 +1,22 @@
 <template>
   <div class="cart-item-card">
     <div class="header">
-      <h3>{{ product.name }}</h3>
-      <h4>In Cart: {{ product.quantity }}</h4>
-      <h4>Total Cost: {{ item_cost }}</h4>
+      <div class="row">
+        <div class="col">
+          <img :src="product.imgSrc">
+        </div>
+        <div class="col">
+          <p>{{ product.name }}</p>
+        </div>
+        
+        
+      </div>
+      
+      <p>In Cart: {{ product.quantity }}</p>
+      <p>Total Cost: {{ item_cost }}</p>
     </div>
 
-    <p>{{ description }}</p>
+    <!-- <p>{{ description }}</p> -->
   </div>
 </template>
 
@@ -29,7 +39,7 @@ export default {
     width: 90%;
     margin: 5%;
     background-color: #fff;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 5px;
     padding: 10px;
     text-align: left;
@@ -38,5 +48,12 @@ export default {
       display: flex;
       justify-content: space-around;
     }
+  }
+  img {
+    width: 10vh;
+  }
+
+  img-info {
+    display: inline;
   }
 </style>
