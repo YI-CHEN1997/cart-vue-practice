@@ -5,7 +5,7 @@ const items = [
     price: 560,
     imgSrc: require('../assets/5.png'),
     category: 'Jeans',
-    description: '這款牛仔褲真的超級顯瘦！白色的車縫線和兩個扣子設計也很特別重點是超百搭',
+    desc: '這款牛仔褲真的超級顯瘦！<br/>白色的車縫線和兩個扣子設計也很特別重點是超百搭',
   },
   {
     id:2,
@@ -13,7 +13,7 @@ const items = [
     price: 620,
     imgSrc: require('../assets/black-pant.png'),
     category: 'Jeans',
-    description: '這款牛仔褲真的超級顯瘦！ 把闆娘的梨形身材修飾的超漂亮比闆娘瘦的漂亮美眉們穿起來一定更好看！白色的車縫線和兩個扣子設計也很特別重點是超百搭',
+    desc: 'lll',
   },
   {
     id:3,
@@ -21,7 +21,7 @@ const items = [
     price: 630,
     imgSrc: require('../assets/black-skirt.png'),
     category: 'Jeans',
-    description: 'lorem20',
+    desc: 'lorem20',
   },
   {
     id:4,
@@ -29,7 +29,7 @@ const items = [
     price: 680,
     imgSrc: require('../assets/brown-pants.png'),
     category: 'Jeans',
-    description: 'lorem20',
+    desc: 'lorem20',
   },
   {
     id:5,
@@ -37,7 +37,7 @@ const items = [
     price: 590,
     imgSrc: require('../assets/white-shirt.png'),
     category: 'Jeans',
-    description: 'lorem20',
+    desc: 'lorem20',
   },
   {
     id:6,
@@ -45,7 +45,7 @@ const items = [
     price: 510,
     imgSrc: require('../assets/black-shirt.png'),
     category: 'Jeans',
-    description: 'lorem20',
+    desc: 'lorem20',
   },
 ]
 

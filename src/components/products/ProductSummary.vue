@@ -1,30 +1,26 @@
 <template>
   <div class="product-card">
-    <img :src="product.imgSrc">
+    <img :src="product.imgSrc"
+    @click="redirectProduct(id)">
+
     <div class="product-name-price">
       <p class="product-name">{{ product.name }}</p>
       <p class="price">NT${{ product.price }}</p>
       <button @click="$emit('view-product', product)">加入購物車</button>
-      <!-- <button class="view-product-button" @click="$emit('view-product', product)">VIEW</button> -->
+      <!--                  要綁定的事件名稱   透過這事件傳至父層的資料-->
     </div>
   </div>
-  
-    
-    
-    <!-- <p class="discription">{{ description }}</p>
-    <p class="text-muted">{{ product.category }}</p>
-    <button class="view-product-button" @click="$emit('view-product', product)">View Product</button> -->
-  <!-- </div> -->
 </template>
 
 <script>
 export default {
+  // 從外部引入product資料（在HomeView裡的v-for）
   props: ['product'],
-  computed: {
-    description(){
-      return this.product.description.substring(0, 150)
+  methods: {
+    redirectProduct: function(id){
+      this.$router.push(`/products/${id}`)
     }
-  }
+  },
 }
 
 </script>
@@ -32,11 +28,6 @@ export default {
 <style lang="scss">
   .product-card {
     justify-content: center;
-    // width: 50%;
-    // margin: 10%;
-    // padding: 2%;
-    // background-color: #fff;
-    // box-shadow: 0 0 5px rgba(0,0,0,0.1);
     
     text-align: center;
     cursor: pointer;
@@ -47,7 +38,7 @@ export default {
   img {
     display: block;
     width: 100%;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 5px rgba(19, 19, 19, 0.1);
   }
 
   .product-name-price {

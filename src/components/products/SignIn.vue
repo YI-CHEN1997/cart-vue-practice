@@ -1,29 +1,29 @@
 <template>
-  <div class="drawer-background"
+  <div class="popup-background"
   :class="{show: active}"
-  @click="$emit('close-product-drawer')" />
+  @click="$emit('close-product-popup')" />
 
-  <div></div>
-
-  <div class="drawer" :class="{show: active}">
-    <div class="drawer-close" @click="$emit('close-product-drawer')">
+  <div class="popup" :class="{show: active}">
+    <div class="popup-close" @click="$emit('close-product-popup')">
       &times;
     </div>
+
     <div v-if="product" class="product-details">
       <div>
         <img :src="product.imgSrc">
       </div>
       <div>
-        <p>{{ product.name }}</p>
-      <p>NT${{ product.price }}</p>
+        <p class="product_name">{{ product.name }}</p>
+      <p class="product_price">NT${{ product.price }}</p>
 
       <div class="button-container">
-          <button class="remove btn" @click="removeFromCart()">-</button>
+          <button type="button" class="remove btn" @click="removeFromCart()">-</button>
           <div class="cart-total" v-if="product_total">
-            <p value="0">{{ product_total }}</p>
+            {{product_total}}
           </div>
-          <button class="add btn" @click="addToCart()">+</button>
+          <button type="button" class="add btn" @click="addToCart()">+</button>
       </div>
+      <button type="button" class="add-to-cart-btn" @click="$emit('close-product-popup')">加入購物車</button>
       </div>
     </div>
     <!-- <div v-if="product">
@@ -44,6 +44,7 @@ export default {
     }
   },
   computed: {
+    // 按加減呈現的數字
     product_total() {
       return this.$store.getters.productQuantity(this.product)
     }
@@ -53,7 +54,7 @@ export default {
 
 <style lang="scss">
   // 暗掉的背景色
-  .drawer-background {
+  .popup-background {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -69,7 +70,7 @@ export default {
     }
   }
 
-  .drawer {
+  .popup {
     width: 80vw;
     height: 55vh;
     background-color: white;
@@ -91,7 +92,7 @@ export default {
   }
 
   // X 鍵
-  .drawer-close {
+  .popup-close {
     font-size: 1.5rem;
     text-align: center;
     padding: 2px;
@@ -107,33 +108,39 @@ export default {
     margin: 50px 0 50px 0;
     display: flex;
     justify-content: center;
-    text-align: center;
-    align-items: center;
+    align-content: center;
 
     img {
       margin-right: 20px;
-      width: 100px;
+      width: 150px;
     }
 
-    // drawer.description {
-    //   margin-top: 50px;
-    //   padding: 20px;
-    //   line-height: 1.5rem;
-    // }
+    .product_price {
+      font-size: .8rem;
+    }
 
+// button
     .button-container {
       position: relative;
       display: flex;
       width: 140px;
-      background: #eee;
+      border: 1px solid #eee;
       border-radius: 5px;
       justify-content: space-around;
       align-items: center;
       overflow: hidden;
 
       .cart-total  {
-        width: 100px;
-        overflow: hidden;
+        width: 50px;
+        min-width: 0;
+        display: inline-block;
+        text-align: center;
+		
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          appearance: none;
+          margin: 0;
+        }
       }
 
       .btn {
@@ -142,27 +149,28 @@ export default {
         border: none;
         display: inline-block;
         min-width: 0;
-        height: 2rem;
-        line-height: 1;
+        height: 1rem;
+        text-align: center;
+        // line-height: 1;
 
         &:focus {
           outline: none;
         }
       }
-
-      // button.add {
-      //   position: absolute;
-      //   right: 0;
-      // }
-    
-      button {
-        background: #fff;
-      }
     }
+    .add-to-cart-btn {
+      width: 140px;
+        font-size:.9rem ;
+        color: white;
+        border: 1px solid white;
+        background: #000;
+        margin: 20px 0 20px 0;
+        padding: 7px 10px 7px 10px;
+      }
   }
 
   @media (min-width: 500px) {
-    .drawer {
+    .popup {
       width: 450px;
     }
   }

@@ -15,14 +15,12 @@
           <router-link to="/"><img src="../assets/logo-circle.png" alt=""></router-link>
       </div>
       <div>
-         <router-link :class="{active: $router.name === 'Home'}" to="/">PRODUCTS</router-link> 
+         <router-link :class="{active: $router.name === 'Home'}" to="/">全部商品</router-link><span>|</span> 
+         <router-link :class="{active: $router.name === 'Home'}" to="/">上衣</router-link><span>|</span> 
+         <router-link :class="{active: $router.name === 'Home'}" to="/">褲子</router-link> 
       </div>
  </div>
 </template>
-<script>
- export default {
- }
- </script>
 
 <style scoped>
   /* top navbar */
@@ -47,6 +45,11 @@
 
   .top-nav a {
     position: relative;
+  }
+
+  #nav span {
+    font-weight: bold;
+    color: #0000CC;
   }
 
   .cartQuantity{

@@ -7,7 +7,7 @@
       :key="product.id"
       :product="product" />
 
-    <CartSummaryPaymentCard />
+    <CartSummaryPayment />
     
   </div>
   <FooterComponent/>
@@ -15,12 +15,12 @@
 
 <script>
 import CartItemCard from '../components/cart/CartItemCard.vue'
-import CartSummaryPaymentCard from '../components/cart/CartSummaryPaymentCard.vue'
+import CartSummaryPayment from '../components/cart/CartSummaryPayment.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   components: {
-    CartItemCard, CartSummaryPaymentCard, FooterComponent
+    CartItemCard, CartSummaryPayment, FooterComponent
   },
 
   computed: {

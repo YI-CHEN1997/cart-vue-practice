@@ -13,7 +13,6 @@ import NavbarComponent from '@/components/NavbarComponent.vue'
  export default {
    components:{
      NavbarComponent,
-     
    },
    mounted() {
      this.$store.commit('updateCartFromLocalStorage')

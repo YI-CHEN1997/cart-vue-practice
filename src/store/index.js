@@ -9,6 +9,7 @@ export default createStore({
     cart: []
   },
   getters: {
+    // 與購物車內容同步
     productQuantity: state => product => {
       const item = state.cart.find(i => i.id === product.id)
 
@@ -20,8 +21,11 @@ export default createStore({
     },
     cartTotal: state => {
       return state.cart.reduce((a, b) => a + (b.price * b.quantity), 0)
+      // ?
     }
   },
+
+  // 更改狀態
   mutations: {
     addToCart (state, product) {
       let item = state.cart.find( i => i.id === product.id)
@@ -47,7 +51,9 @@ export default createStore({
 
       updateLocalStorage(state.cart)
     },
-    updateLocalStorage(state){
+
+    // 讓網頁刷新時還保留更動的部分
+    updateCartFromLocalStorage(state){
       const cart = localStorage.getItem('cart')
       if (cart){
         state.cart = JSON.parse(cart)

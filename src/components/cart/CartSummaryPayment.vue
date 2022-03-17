@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  computer: {
+  computed: {
     cart_total() {
       return this.$store.getters.cartTotal
     }
