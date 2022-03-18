@@ -11,7 +11,7 @@
       v-for="product in items"
       :key="product.id"
       :product="product"
-      v-on:view-product="viewProduct" />
+      v-on:view-add-cart="viewAddCart" />
       <!-- methods（view-product是component $emit 傳過來的）-->
       <!-- 自行取名product 然後在components/ProductSummary.vue 裡的props引入 -->
     </div>
@@ -38,8 +38,6 @@ export default {
     return {
       // 產品資料
       items: items,
-
-      // ?
       product: null,
       active: {
         product_popup: false
@@ -49,7 +47,7 @@ export default {
   },
   methods: {
     // 上面的 v-on
-    viewProduct(product) {
+    viewAddCart(product) {
       this.product = product
       this.active.product_popup = true
       console.log(this.product)

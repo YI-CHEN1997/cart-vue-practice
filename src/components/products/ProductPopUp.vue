@@ -59,7 +59,6 @@ export default {
     z-index: 101;
     opacity: 0;
 
-    // overflow-y: scroll;
 
     &.show {
       opacity: 1;

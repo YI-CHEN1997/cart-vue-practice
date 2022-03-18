@@ -1,12 +1,11 @@
 <template>
   <div class="product-card">
-    <img :src="product.imgSrc"
-    @click="redirectProduct(id)">
+    <img :src="product.imgSrc" @click="redirectProduct(id)">
 
     <div class="product-name-price">
       <p class="product-name">{{ product.name }}</p>
       <p class="price">NT${{ product.price }}</p>
-      <button @click="$emit('view-product', product)">加入購物車</button>
+      <button @click="$emit('view-add-cart', product)">加入購物車</button>
       <!--                  要綁定的事件名稱   透過這事件傳至父層的資料-->
     </div>
   </div>
@@ -38,7 +37,7 @@ export default {
   img {
     display: block;
     width: 100%;
-    box-shadow: 5px 5px 5px rgba(19, 19, 19, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
   .product-name-price {

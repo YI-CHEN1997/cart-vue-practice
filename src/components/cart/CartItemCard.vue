@@ -1,29 +1,45 @@
 <template>
-  <div class="cart-item-card">
-    <div class="header">
-      <div class="row">
-        <div class="col">
-          <img :src="product.imgSrc">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">商品資訊</th>
+      <th scope="col">數量</th>
+      <th scope="col">小計</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><img :src="product.imgSrc">{{ product.name }}</td>
+      <td><div class="button-container">
+        <button type="button" class="remove btn" @click="removeFromCart()">-</button>
+        <div class="cart-total">
+          {{product_total}}
         </div>
-        <div class="col">
-          <p>{{ product.name }}</p>
-        </div>
-        
-        
-      </div>
-      
-      <p>In Cart: {{ product.quantity }}</p>
-      <p>Total Cost: {{ item_cost }}</p>
-    </div>
+        <button type="button" class="add btn" @click="addToCart()">+</button>
+      </div></td>
+      <td>NT:{{ item_cost }}</td>
+    </tr>
+  </tbody>
+</table>
 
-    <!-- <p>{{ description }}</p> -->
-  </div>
+  
 </template>
 
 <script>
 export default {
   props: ['product'],
+  methods: {
+    addToCart(){
+      this.$store.commit('addToCart', this.product)
+    },
+    removeFromCart(){
+      this.$store.commit('removeFromCart', this.product)
+    }
+  },
   computed: {
+    product_total() {
+      return this.$store.getters.productQuantity(this.product)
+    },
     // description() {
     //   return this.product.description.substring(0, 120)
     // },

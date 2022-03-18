@@ -3,7 +3,7 @@
     <div class="top-nav">
       <router-link :class="{active: $router.name === 'Cart'}" to="/cart">
         <i class="fas fa-shopping-cart"></i>
-        <span class="cartQuantity">3</span>
+        <span class="cartQuantity">{{ cart_total }}</span>
       </router-link>
 
       <router-link :class="Sign_in" to="/sign-in">SIGN IN</router-link>
@@ -15,12 +15,22 @@
           <router-link to="/"><img src="../assets/logo-circle.png" alt=""></router-link>
       </div>
       <div>
-         <router-link :class="{active: $router.name === 'Home'}" to="/">全部商品</router-link><span>|</span> 
-         <router-link :class="{active: $router.name === 'Home'}" to="/">上衣</router-link><span>|</span> 
+         <router-link :class="{active: $router.name === 'Home'}" to="/">全部商品</router-link>
+         <router-link :class="{active: $router.name === 'Home'}" to="/">上衣</router-link>
          <router-link :class="{active: $router.name === 'Home'}" to="/">褲子</router-link> 
       </div>
  </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    cart_total() {
+      return this.$store.getters.cartTotal
+    }
+  }
+}
+</script>
 
 <style scoped>
   /* top navbar */
@@ -45,11 +55,6 @@
 
   .top-nav a {
     position: relative;
-  }
-
-  #nav span {
-    font-weight: bold;
-    color: #0000CC;
   }
 
   .cartQuantity{
@@ -77,7 +82,7 @@
   #nav a{
     color: #2c3e50;
     text-decoration: none;
-    margin: 0 20px 0 20px;
+    margin: 0 30px 0 30px;
   }
 
   #nav a.router-link-exact-active {

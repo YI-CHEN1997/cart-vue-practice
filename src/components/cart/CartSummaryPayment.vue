@@ -1,6 +1,6 @@
 <template>
   <div class="cart-item-card">
-    <p>Cart Total: ${{ cart_total }}</p>
+    <p>Cart Total: ${{ price_total }}</p>
 
     <button class="view-product-button">結帳</button>
   </div>
@@ -9,8 +9,8 @@
 <script>
 export default {
   computed: {
-    cart_total() {
-      return this.$store.getters.cartTotal
+    price_total() {
+      return this.$store.getters.priceTotal
     }
   }
 }

@@ -1,47 +1,45 @@
 <template>
-  <div v-if="product" class="product-details">
-      <div>
-        <img :src="product.imgSrc">
-      </div>
-      <div>
-        <p class="product_name">{{ product.name }}</p>
+<div>
+  <div class="product-details">
+    <div>
+      <img :src="product.imgSrc">
+    </div>
+    <div>
+      <p class="product_name">{{ product.name }}</p>
       <p class="product_price">NT${{ product.price }}</p>
 
       <div class="button-container">
-          <button type="button" class="remove btn" @click="removeFromCart()">-</button>
-          <div class="cart-total" v-if="product_total">
-            {{product_total}}
-          </div>
-          <button type="button" class="add btn" @click="addToCart()">+</button>
+        <button type="button" class="remove btn" @click="removeFromCart()">-</button>
+        <div class="cart-total">
+          {{product_total}}
+        </div>
+        <button type="button" class="add btn" @click="addToCart()">+</button>
       </div>
       <button type="button" class="add-to-cart-btn" @click="$emit('close-product-popup')">加入購物車</button>
-      </div>
+    </div>
   </div>
-      <hr>
-      <h3>商品描述</h3>
-      <p>{{ product.desc }}</p>
- </template>
+</div>
+  
+</template>
 
- <script>
-  export default {
-    props: ['product', 'active'],
-    methods: {
-      addToCart(){
-        this.$store.commit('addToCart', this.product)
-      },
-      removeFromCart(){
-        this.$store.commit('removeFromCart', this.product)
-      },
-  },
-  computed: {
-    product_total() {
-      return this.$store.getters.productQuantity(this.product)
+<script>
+import items from '../data/items.js'
+// import ProductBox from '@/components/products/ProductBox.vue'
+export default {
+  props: ['product'],
+  // components: {
+  //   ProductBox
+  // },
+  data() {
+    return {
+      items: items,
     }
-  }
+  },
+
+  
 }
 </script>
-
- <style lang="scss">
+<style lang="scss">
   .product-details {
     margin: 50px 0 50px 0;
     display: flex;
@@ -106,4 +104,4 @@
         padding: 7px 10px 7px 10px;
       }
   }
- </style>
+</style>

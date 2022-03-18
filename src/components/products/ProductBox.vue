@@ -1,5 +1,5 @@
 <template>
-  <div v-if="product" class="product-details">
+  <div class="product-details">
     <div>
       <img :src="product.imgSrc">
     </div>
@@ -9,7 +9,7 @@
 
       <div class="button-container">
         <button type="button" class="remove btn" @click="removeFromCart()">-</button>
-        <div class="cart-total" v-if="product_total">
+        <div class="cart-total">
           {{product_total}}
         </div>
         <button type="button" class="add btn" @click="addToCart()">+</button>
@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-  props: ['product', 'active'],
+  props: ['product'],
   methods: {
     addToCart(){
       this.$store.commit('addToCart', this.product)
