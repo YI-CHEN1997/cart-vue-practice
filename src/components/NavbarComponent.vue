@@ -6,7 +6,7 @@
         <span class="cartQuantity">{{ cart_total }}</span>
       </router-link>
 
-      <router-link :class="Sign_in" to="/sign-in">SIGN IN</router-link>
+      <router-link :class="Sign_in" to="/signin">SIGN IN</router-link>
     </div>
   </div>
   

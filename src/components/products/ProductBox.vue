@@ -43,7 +43,7 @@ export default {
     margin: 50px 0 50px 0;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
     img {
       margin-right: 20px;
@@ -70,12 +70,6 @@ export default {
         min-width: 0;
         display: inline-block;
         text-align: center;
-		
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          appearance: none;
-          margin: 0;
-        }
       }
 
       .btn {
@@ -84,7 +78,6 @@ export default {
         border: none;
         display: inline-block;
         min-width: 0;
-        height: 1rem;
         text-align: center;
         // line-height: 1;
 

@@ -17,7 +17,7 @@ export default {
   props: ['product'],
   methods: {
     redirectProduct: function(id){
-      this.$router.push(`/products/${id}`)
+      this.$router.push(`/${id}`)
     }
   },
 }

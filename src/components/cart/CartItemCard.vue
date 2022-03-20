@@ -2,27 +2,29 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">商品資訊</th>
-      <th scope="col">數量</th>
-      <th scope="col">小計</th>
+      <th class="tb1">商品資訊</th>
+      <th class="tb2">數量</th>
+      <th class="tb3">小計</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td scope="row"><img :src="product.imgSrc">{{ product.name }}</td>
-      <td><div class="button-container">
+      <td><img :src="product.imgSrc">{{ product.name }}</td>
+
+      <td>
+        <div class="button-container">
         <button type="button" class="remove btn" @click="removeFromCart()">-</button>
         <div class="cart-total">
           {{product_total}}
         </div>
         <button type="button" class="add btn" @click="addToCart()">+</button>
-      </div></td>
+        </div>
+      </td>
+      
       <td>NT:{{ item_cost }}</td>
     </tr>
   </tbody>
 </table>
-
-  
 </template>
 
 <script>
@@ -40,9 +42,6 @@ export default {
     product_total() {
       return this.$store.getters.productQuantity(this.product)
     },
-    // description() {
-    //   return this.product.description.substring(0, 120)
-    // },
     item_cost() {
       return this.product.price * this.product.quantity
     }
@@ -51,25 +50,55 @@ export default {
 </script>
 
 <style lang="scss">
-  .cart-item-card {
-    width: 90%;
-    margin: 5%;
+  .table {
+    margin: 2%;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 5px;
-    padding: 10px;
-    text-align: left;
+    text-align: center;
+    justify-content: center;
 
-    .header {
+    .tb1 {
+      width: 50px;
+    }
+
+    img {
+    width: 90px;
+    margin: 5px;
+    }
+
+    .button-container {
+      position: relative;
       display: flex;
+      width: 140px;
+      border: 1px solid #eee;
+      border-radius: 5px;
       justify-content: space-around;
+      align-items: center;
+      overflow: hidden;
+
+      .cart-total  {
+        width: 50px;
+        min-width: 0;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .btn {
+        background: transparent;
+        color: inherit;
+        border: none;
+        display: inline-block;
+        min-width: 0;
+        height: 1rem;
+        text-align: center;
+        // line-height: 1;
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
-  img {
-    width: 10vh;
-  }
-
-  img-info {
-    display: inline;
-  }
+  
 </style>
