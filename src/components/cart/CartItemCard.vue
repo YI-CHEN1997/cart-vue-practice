@@ -90,7 +90,6 @@ export default {
         border: none;
         display: inline-block;
         min-width: 0;
-        height: 1rem;
         text-align: center;
         // line-height: 1;
 

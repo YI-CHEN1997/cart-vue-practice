@@ -5,7 +5,7 @@ const items = [
     price: 560,
     imgSrc: require('../assets/5.png'),
     category: 'Jeans',
-    desc: '這款牛仔褲真的超級顯瘦！<br/>白色的車縫線和兩個扣子設計也很特別重點是超百搭',
+    desc: 'lorem',
   },
   {
     id:2,
@@ -13,7 +13,7 @@ const items = [
     price: 620,
     imgSrc: require('../assets/black-pant.png'),
     category: 'Jeans',
-    desc: 'lll',
+    desc: 'lorem',
   },
   {
     id:3,

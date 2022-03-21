@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <img :src="product.imgSrc" @click="redirectProduct(id)">
+    <img :src="product.imgSrc" @click="redirectProduct(product.id)">
 
     <div class="product-name-price">
       <p class="product-name">{{ product.name }}</p>
@@ -16,8 +16,8 @@ export default {
   // 從外部引入product資料（在HomeView裡的v-for）
   props: ['product'],
   methods: {
-    redirectProduct: function(id){
-      this.$router.push(`/${id}`)
+    redirectProduct(id) {
+      this.$router.push({name:'product', params:{productId:id}})
     }
   },
 }

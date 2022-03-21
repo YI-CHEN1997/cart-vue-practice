@@ -5,7 +5,6 @@
       :active="active.product_popup"
       v-on:close-product-popup="closeProductPopup()" />
     
-
     <div class="products-container">
       <ProductSummary
       v-for="product in items"

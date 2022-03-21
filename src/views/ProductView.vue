@@ -1,12 +1,14 @@
 <template>
-<div class="product-container">
-  <ProductBox
+<div class="product-container"
   v-for="product in items"
-  :key="product.id"
-  :product="product" />
-
-  <!-- <h3>商品描述</h3>
-  <p>{{ product.desc }}</p> -->
+  :key="product.id" >
+  <div v-if="id == product.id">
+    <ProductDesc
+    :product="product"  />
+    
+  </div>
+  
+  
 </div>
   
   <FooterComponent/>
@@ -14,22 +16,19 @@
 
 <script>
 import items from '../data/items.js'
-import ProductBox from '@/components/products/ProductBox.vue'
+import ProductDesc from '@/components/products/ProductDesc.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+
 export default {
   components: {
-    ProductBox, FooterComponent
+    ProductDesc, FooterComponent
   },
   data() {
     return {
       items: items,
-      product: '',
+      id:this.$route.params.productId,
     }
   },
   
-  
 }
 </script>
-<style lang="scss">
-  
-</style>

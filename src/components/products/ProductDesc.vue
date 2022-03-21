@@ -1,5 +1,6 @@
 <template>
-  <div class="product-details">
+<div class="product-details">
+  <div class="img-button">
     <div>
       <img :src="product.imgSrc">
     </div>
@@ -17,6 +18,13 @@
       <button type="button" class="add-to-cart-btn">加入購物車</button>
     </div>
   </div>
+  <div>
+    <p>商品描述</p>
+  <p>{{ product.desc }}</p>
+  </div>
+  
+</div>
+  
 </template>
 <script>
 export default {
@@ -38,61 +46,65 @@ export default {
 }
 </script>
 
-// <style lang="scss">
-//   .product-details {
-//     margin: 50px 0 50px 0;
-//     display: flex;
-//     align-items: center;
+<style lang="scss">
+  .product-details {
+    margin: 50px 0 50px 0;
+    align-items: center;
 
-//     img {
-//       margin-right: 50px;
-//       width: 250px;
-//     }
+    .img-button {
+      display: flex;
+      align-items: center;
+    }
 
-//     .product_price {
-//       font-size: .8rem;
-//     }
+    img {
+      margin-right: 50px;
+      width: 250px;
+    }
 
-// // button
-//     .button-container {
-//       position: relative;
-//       display: flex;
-//       width: 140px;
-//       border: 1px solid #eee;
-//       border-radius: 5px;
-//       justify-content: space-around;
-//       align-items: center;
-//       overflow: hidden;
+    .product_price {
+      font-size: .8rem;
+    }
 
-//       .cart-total  {
-//         width: 50px;
-//         min-width: 0;
-//         display: inline-block;
-//         text-align: center;
-//       }
+// button
+    .button-container {
+      position: relative;
+      display: flex;
+      width: 140px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      justify-content: space-around;
+      align-items: center;
+      overflow: hidden;
 
-//       .btn {
-//         background: transparent;
-//         color: inherit;
-//         border: none;
-//         display: inline-block;
-//         min-width: 0;
-//         text-align: center;
-//         // line-height: 1;
+      .cart-total  {
+        width: 50px;
+        min-width: 0;
+        display: inline-block;
+        text-align: center;
+      }
 
-//         &:focus {
-//           outline: none;
-//         }
-//       }
-//     }
-//     .add-to-cart-btn {
-//       width: 140px;
-//         font-size:.9rem ;
-//         color: white;
-//         border: 1px solid white;
-//         background: #000;
-//         margin: 20px 0 20px 0;
-//         padding: 7px 10px 7px 10px;
-//       }
-//   }
+      .btn {
+        background: transparent;
+        color: inherit;
+        border: none;
+        display: inline-block;
+        min-width: 0;
+        text-align: center;
+        // line-height: 1;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .add-to-cart-btn {
+      width: 140px;
+        font-size:.9rem ;
+        color: white;
+        border: 1px solid white;
+        background: #000;
+        margin: 20px 0 20px 0;
+        padding: 7px 10px 7px 10px;
+      }
+  }
 </style>
