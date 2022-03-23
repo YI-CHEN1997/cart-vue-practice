@@ -1,5 +1,5 @@
 <template>
-<div class="product-details">
+<div class="details">
   <div class="img-button">
     <div>
       <img :src="product.imgSrc">
@@ -18,9 +18,11 @@
       <button type="button" class="add-to-cart-btn">加入購物車</button>
     </div>
   </div>
-  <div>
-    <p>商品描述</p>
-  <p>{{ product.desc }}</p>
+  <div class="text-desc">
+    <p>|  商品描述  |</p>
+    <p class="desc" v-html="product.desc"></p>
+    <p class="size" v-html="product.size"></p>
+    <p class="desc2" v-html="product.desc2"></p>
   </div>
   
 </div>
@@ -47,13 +49,13 @@ export default {
 </script>
 
 <style lang="scss">
-  .product-details {
+  .details {
     margin: 50px 0 50px 0;
-    align-items: center;
-
+    
     .img-button {
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     img {
@@ -62,7 +64,7 @@ export default {
     }
 
     .product_price {
-      font-size: .8rem;
+      font-size: .9rem;
     }
 
 // button
@@ -85,26 +87,30 @@ export default {
 
       .btn {
         background: transparent;
-        color: inherit;
         border: none;
         display: inline-block;
         min-width: 0;
         text-align: center;
-        // line-height: 1;
-
-        &:focus {
-          outline: none;
-        }
       }
     }
     .add-to-cart-btn {
       width: 140px;
-        font-size:.9rem ;
-        color: white;
-        border: 1px solid white;
-        background: #000;
-        margin: 20px 0 20px 0;
-        padding: 7px 10px 7px 10px;
+      font-size: 1rem ;
+      color: white;
+      border: 1px solid white;
+      background: #000;
+      margin: 20px 0 20px 0;
+      padding: 7px 10px 7px 10px;
+      }
+
+    .text-desc {
+      margin-top: 15vh;
+      text-align: center;
+
+      
+    }
+    .desc .size .desc2 {
+        padding: 15vh;
       }
   }
 </style>

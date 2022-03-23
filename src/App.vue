@@ -9,6 +9,8 @@
 
 <script>
 import NavbarComponent from '@/components/NavbarComponent.vue'
+import { onBeforeMount } from 'vue'
+import { useStore } from 'vuex'
 
  export default {
    components:{
@@ -17,7 +19,13 @@ import NavbarComponent from '@/components/NavbarComponent.vue'
    mounted() {
      this.$store.commit('updateCartFromLocalStorage')
    },
+  setup() {
+    const store = useStore()
+    onBeforeMount(() => {
+      store.dispatch('fetchUser')
+    })
   }
+}
 
 </script>
 

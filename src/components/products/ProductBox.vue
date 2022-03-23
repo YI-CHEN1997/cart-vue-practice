@@ -88,12 +88,12 @@ export default {
     }
     .add-to-cart-btn {
       width: 140px;
-        font-size:.9rem ;
-        color: white;
-        border: 1px solid white;
-        background: #000;
-        margin: 20px 0 20px 0;
-        padding: 7px 10px 7px 10px;
-      }
+      font-size:.9rem ;
+      color: white;
+      border: 1px solid white;
+      background: #000;
+      margin: 20px 0 20px 0;
+      padding: 7px 10px 7px 10px;
+    }
   }
 </style>

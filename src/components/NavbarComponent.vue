@@ -1,13 +1,12 @@
 <template>
-  <div class="top">
-    <div class="top-nav">
-      <router-link :class="{active: $router.name === 'Cart'}" to="/cart">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cartQuantity">{{ cart_total }}</span>
-      </router-link>
-
-      <router-link :class="Sign_in" to="/signin">SIGN IN</router-link>
-    </div>
+  <div class="top-nav">
+    <router-link :class="{active: $router.name === 'Cart'}" to="/cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cartQuantity">{{ cart_total }}</span>
+    </router-link>
+    <router-link :class="Sign_in" to="/signin">SIGN IN</router-link>
+    <router-link :class="Sign_in" to="/signin">CONTACT</router-link>
+    <button @click="$store.dispatch('logout')">Logout</button>
   </div>
   
   <div id="nav">  
@@ -34,15 +33,17 @@ export default {
 
 <style scoped>
   /* top navbar */
-  .top {
-    position: relative;
-    padding: 30px;
-  }
-
   .top-nav {
-    position: absolute;
+    width: 100%;
+    height: 10vh;
+    background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
     right: 0;
-    padding: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    z-index: 101;
+    text-align: end;
   }
 
   .top-nav a {
@@ -74,6 +75,7 @@ export default {
 
   /* logo and sec navbar */
   #nav{
+    margin-top: 10vh;
     padding:0 50px 50px 50px;
     text-align: center;
     background: white ;

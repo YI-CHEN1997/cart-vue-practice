@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <p>購物車</p>
       
     <CartItemCard
@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style>
-
+  
 </style>

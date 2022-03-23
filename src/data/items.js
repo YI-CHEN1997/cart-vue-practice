@@ -5,7 +5,9 @@ const items = [
     price: 560,
     imgSrc: require('../assets/5.png'),
     category: 'Jeans',
-    desc: 'lorem',
+    desc: '這款牛仔褲真的超級顯瘦！<br/>把梨形身材修飾的超漂亮<br/>白色的車縫線和兩個扣子設計也很特別',
+    size: '尺寸S (麻豆尺寸)<br/>腰寬: 33 cm<br/>臀寬: 47 cm<br/>大腿寬: 26 cm<br/>褲口寬: 23 cm<br/>褲長: 97 cm',
+    desc2: '*本尺寸皆為水平測量，手工測量可能會有誤差約1~2cm<br/>100%實穿實拍',
   },
   {
     id:2,

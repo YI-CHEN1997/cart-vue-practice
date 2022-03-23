@@ -1,30 +1,39 @@
 <template>
-  <table class="table">
-  <thead>
-    <tr>
-      <th class="tb1">商品資訊</th>
-      <th class="tb2">數量</th>
-      <th class="tb3">小計</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img :src="product.imgSrc">{{ product.name }}</td>
-
-      <td>
-        <div class="button-container">
+  <div class="product-table">
+    <div class="row">
+      <div class="col-lg-4">
+        <p>商品資訊</p>
+      </div>
+      <div class="col-lg-4">
+        <p>數量</p>
+      </div>
+      <div class="col-lg-4">
+        <p>小計</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+      
+      <img :src="product.imgSrc">{{ product.name }}
+    </div>
+    <div class="col-lg-4">
+      
+      <div class="button-container">
         <button type="button" class="remove btn" @click="removeFromCart()">-</button>
         <div class="cart-total">
           {{product_total}}
         </div>
         <button type="button" class="add btn" @click="addToCart()">+</button>
         </div>
-      </td>
+    </div>
+    <div class="col-lg-4">
       
-      <td>NT:{{ item_cost }}</td>
-    </tr>
-  </tbody>
-</table>
+      NT:{{ item_cost }}
+    </div>
+    </div>
+    
+  </div>
+  
 </template>
 
 <script>
@@ -50,17 +59,12 @@ export default {
 </script>
 
 <style lang="scss">
-  .table {
-    margin: 2%;
+  .product-table {
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 5px;
     text-align: center;
     justify-content: center;
-
-    .tb1 {
-      width: 50px;
-    }
 
     img {
     width: 90px;
