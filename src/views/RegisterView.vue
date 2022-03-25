@@ -1,24 +1,23 @@
 <template>
 <div class="container">
-	<LoginComponent />
-</div>
 
+	<RegisterComponent />
+	
+</div>
 </template>
 
 <script>
-
-import LoginComponent from '../components/sign/LoginComponent.vue'
-
+import RegisterComponent from '../components/sign/RegisterComponent.vue'
 
 export default {
 	components: {
-		LoginComponent,
+		RegisterComponent
 	},
 }
 </script>
 
 <style scoped>
-	.container {
+ .container {
 		display: flex;
     justify-content: center; 
 	}

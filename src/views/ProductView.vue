@@ -7,21 +7,16 @@
     :product="product"  />
     
   </div>
-  
-  
 </div>
-  
-  <FooterComponent/>
 </template>
 
 <script>
 import items from '../data/items.js'
 import ProductDesc from '@/components/products/ProductDesc.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   components: {
-    ProductDesc, FooterComponent
+    ProductDesc
   },
   data() {
     return {

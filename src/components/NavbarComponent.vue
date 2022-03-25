@@ -4,7 +4,7 @@
       <i class="fas fa-shopping-cart"></i>
       <span class="cartQuantity">{{ cart_total }}</span>
     </router-link>
-    <router-link :class="Sign_in" to="/signin">SIGN IN</router-link>
+    <router-link :class="Sign_in" to="/login">SIGN IN</router-link>
     <router-link :class="Sign_in" to="/signin">CONTACT</router-link>
     <button @click="$store.dispatch('logout')">Logout</button>
   </div>
@@ -35,7 +35,7 @@ export default {
   /* top navbar */
   .top-nav {
     width: 100%;
-    height: 10vh;
+    /* height: 10vh; */
     background: rgba(255, 255, 255, 0.5);
     position: fixed;
     top: 0;

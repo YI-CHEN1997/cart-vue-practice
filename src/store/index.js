@@ -3,7 +3,6 @@ import router from '../router'
 import { auth } from '../firebase'
 import { 
   createUserWithEmailAndPassword,
-  // signinUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut } from 'firebase/auth'
 
@@ -78,6 +77,8 @@ export default createStore({
       state.user = null
     }
   },
+
+  // 提交（commit）mutations ，而不是直接變更 state
   actions: {
     async login ({commit}, details) {
       const { email, password } = details

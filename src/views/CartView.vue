@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p>購物車</p>
+    <p>購物車（{{ cart_total }}）</p>
       
     <CartItemCard
       v-for="product in products"
@@ -10,22 +10,23 @@
     <CartSummaryPayment />
     
   </div>
-  <FooterComponent/>
 </template>
 
 <script>
 import CartItemCard from '../components/cart/CartItemCard.vue'
 import CartSummaryPayment from '../components/cart/CartSummaryPayment.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   components: {
-    CartItemCard, CartSummaryPayment, FooterComponent
+    CartItemCard, CartSummaryPayment
   },
 
   computed: {
     products() {
       return this.$store.getters.cartItems
+    },
+    cart_total() {
+      return this.$store.getters.cartTotal
     }
   }
 }

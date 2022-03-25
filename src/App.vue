@@ -1,20 +1,25 @@
 <template>
-  <div>
+  <main>
   <header>
     <NavbarComponent/>
   </header>
     <router-view/>
-  </div>
+    <footer>
+      <FooterComponent />
+    </footer>
+  </main>
 </template>
 
 <script>
 import NavbarComponent from '@/components/NavbarComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+
 import { onBeforeMount } from 'vue'
 import { useStore } from 'vuex'
 
  export default {
    components:{
-     NavbarComponent,
+     NavbarComponent, FooterComponent
    },
    mounted() {
      this.$store.commit('updateCartFromLocalStorage')
@@ -29,7 +34,7 @@ import { useStore } from 'vuex'
 
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   html, body {
     height: 100%;
     margin: 0;

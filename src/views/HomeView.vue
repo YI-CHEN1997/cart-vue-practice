@@ -16,7 +16,6 @@
     </div>
   </div>
    
-    <FooterComponent/>
 </template>
 
 <script>
@@ -25,13 +24,12 @@ import items from '../data/items.js'
 
 import ProductSummary from '../components/products/ProductSummary.vue'
 import ProductPopUp from '../components/products/ProductPopUp.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 
 
 export default {
   name: 'HomeView',
   components: {
-    ProductSummary, ProductPopUp, FooterComponent
+    ProductSummary, ProductPopUp
   },
   data() {
     return {
