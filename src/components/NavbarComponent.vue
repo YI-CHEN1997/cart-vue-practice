@@ -4,9 +4,9 @@
       <i class="fas fa-shopping-cart"></i>
       <span class="cartQuantity">{{ cart_total }}</span>
     </router-link>
-    <router-link :class="Sign_in" to="/login">SIGN IN</router-link>
-    <router-link :class="Sign_in" to="/signin">CONTACT</router-link>
-    <button @click="$store.dispatch('logout')">Logout</button>
+    <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-user"></i></router-link>
+    <router-link :class="Sign_in" to="/signin"><i class="fa-solid fa-comment"></i></router-link>
+    <!-- <button @click="$store.dispatch('logout')">Logout</button> -->
   </div>
   
   <div id="nav">  
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   /* top navbar */
   .top-nav {
     width: 100%;
@@ -44,18 +44,15 @@ export default {
     margin-bottom: 20px;
     z-index: 101;
     text-align: end;
-  }
 
-  .top-nav a {
+    a {
+    position: relative;
     text-align: center;
     color: #2c3e50;
     text-decoration: none;
     margin: 0 20px 0 20px;
     font-size: .9rem;
-  }
-
-  .top-nav a {
-    position: relative;
+    }
   }
 
   .cartQuantity{
@@ -74,31 +71,27 @@ export default {
   }
 
   /* logo and sec navbar */
-  #nav{
+  #nav {
     margin-top: 10vh;
     padding:0 50px 50px 50px;
     text-align: center;
     background: white ;
-  }
 
-  #nav a{
+    a {
     color: #2c3e50;
     text-decoration: none;
     margin: 0 30px 0 30px;
-  }
+    }
 
-  #nav a.router-link-exact-active {
+    a.router-link-exact-active {
     color: #0000CC;
-  }
+    }
 
-  .text-center {
-    text-align: center;
-  }
-
-  #nav img {
+    img {
     width: 10vw;
     min-width: 100px;
     margin: 5px 10px 30px 10px;
+    }
   }
 
 </style>
