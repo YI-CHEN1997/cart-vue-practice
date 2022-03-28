@@ -32,6 +32,11 @@ export default {
 }
 </script>
 
-<style>
-  
+<style scoped>
+  p {
+    background: #eee;
+    padding: 10px;
+    font-weight: 600;
+    
+  }
 </style>

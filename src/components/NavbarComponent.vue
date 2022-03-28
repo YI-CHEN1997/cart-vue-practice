@@ -20,7 +20,7 @@
           <router-link to="/"><img src="../assets/logo-circle.png" alt=""></router-link>
       </div>
       <div class="category">
-         <router-link to="/">全部商品</router-link>
+         <router-link to="/products">全部商品</router-link>
          <router-link to="/tops">上衣</router-link>
          <router-link to="/pants">褲子</router-link> 
          <router-link to="/dress">裙裝</router-link> 

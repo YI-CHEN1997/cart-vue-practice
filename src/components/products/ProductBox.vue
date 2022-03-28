@@ -14,10 +14,10 @@
         </div>
         <button type="button" class="add btn" @click="addToCart()">+</button>
       </div>
-      <button type="button"
+      <!-- <button type="button"
        class="add-to-cart-btn"
        :class="{show: active}"
-       @click="$emit('close-product-popup')">加入購物車</button>
+       @click="$emit('close-product-popup')">加入購物車</button> -->
     </div>
   </div>
 </template>

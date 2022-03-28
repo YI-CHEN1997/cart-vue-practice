@@ -15,14 +15,14 @@
         </div>
         <button type="button" class="add btn" @click="addToCart()">+</button>
       </div>
-      <button type="button" class="add-to-cart-btn">加入購物車</button>
+      <!-- <button type="button" class="add-to-cart-btn">加入購物車</button> -->
     </div>
   </div>
   <div class="text-desc">
-    <p>|  商品描述  |</p>
-    <p class="desc" v-html="product.desc"></p>
-    <p class="size" v-html="product.size"></p>
-    <p class="desc2" v-html="product.desc2"></p>
+    <p class="title">|  商品描述  |</p>
+    <p v-html="product.desc"></p>
+    <p v-html="product.size"></p>
+    <p v-html="product.desc2"></p>
   </div>
   
 </div>
@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .details {
     margin: 50px 0 50px 0;
     
@@ -107,10 +107,16 @@ export default {
       margin-top: 15vh;
       text-align: center;
 
-      
-    }
-    .desc .size .desc2 {
-        padding: 15vh;
+      .title {
+        font-weight: 600;
+        font-size: 1.1rem;
       }
+
+      p {
+        line-height: 35px;
+        margin-bottom: 100px;
+      }
+    }
+    
   }
 </style>

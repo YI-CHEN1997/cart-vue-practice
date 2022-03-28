@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  // 從外部引入product資料（在HomeView裡的v-for）
+  // 從外部引入product資料（在ProductsView裡的v-for）
   props: ['product'],
   methods: {
     redirectProduct(id) {
