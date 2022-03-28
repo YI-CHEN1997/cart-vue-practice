@@ -7,7 +7,7 @@
     
     <div class="products-container">
       <ProductSummary
-      v-for="product in tops"
+      v-for="product in pants"
       :key="product.category"
       :product="product"
       v-on:view-add-cart="viewAddCart" />
@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import tops from '../data/tops.js'
+import pants from '@/data/pants.js'
 
-import ProductSummary from '../components/products/ProductSummary.vue'
-import ProductPopUp from '../components/products/ProductPopUp.vue'
+import ProductSummary from '../../components/products/ProductSummary.vue'
+import ProductPopUp from '../../components/products/ProductPopUp.vue'
 
 
 export default {
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       // 產品資料
-      tops: tops,
+      pants: pants,
       product: null,
       active: {
         product_popup: false

@@ -5,7 +5,7 @@
       <span class="cartQuantity">{{ cart_total }}</span>
     </router-link>
     <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-user"></i></router-link>
-    <router-link :class="Sign_in" to="/signin"><i class="fa-solid fa-comment"></i></router-link>
+    <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-comment"></i></router-link>
     <!-- <button @click="$store.dispatch('logout')">Logout</button> -->
   </div>
   
@@ -13,11 +13,11 @@
       <div>
           <router-link to="/"><img src="../assets/logo-circle.png" alt=""></router-link>
       </div>
-      <div>
-         <router-link :class="{active: $router.name === 'Home'}" to="/">全部商品</router-link>
-         <router-link :class="{active: $router.name === 'Tops'}" to="/tops">上衣</router-link>
-         <router-link :class="{active: $router.name === 'Pants'}" to="/pants">褲子</router-link> 
-         <router-link :class="{active: $router.name === 'Dress'}" to="/dress">裙裝</router-link> 
+      <div class="category">
+         <router-link to="/">全部商品</router-link>
+         <router-link to="/tops">上衣</router-link>
+         <router-link to="/pants">褲子</router-link> 
+         <router-link to="/dress">裙裝</router-link> 
       </div>
  </div>
 </template>
@@ -92,6 +92,7 @@ export default {
     width: 10vw;
     min-width: 100px;
     margin: 5px 10px 30px 10px;
+    cursor: pointer;
     }
   }
 

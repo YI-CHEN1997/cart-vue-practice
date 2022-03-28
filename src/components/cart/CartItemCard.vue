@@ -1,48 +1,38 @@
 <template>
-  <!-- <div class="product-table">
-    <div class="row">
-      <div class="col-lg-4 col-sm-12 product-info">
+  <div class="product-table">
+    <div class="row title">
+      <div class="col-lg-4 col-md-4">
         <p>商品資訊</p>
-          <div class="back-to-product" @click="redirectProduct(product.id)">
-            <img :src="product.imgSrc">{{ product.name }}
-          </div> 
       </div>
-
-      <div class="col-lg-4 col-sm-6 quantity">
+      <div class="col-lg-4 col-md-4">
         <p>數量</p>
-        <div class="button-container">
-        <button type="button" class="remove btn" @click="removeFromCart()">-</button>
-        <div class="cart-total">
-          {{product_total}}
-        </div>
-        <button type="button" class="add btn" @click="addToCart()">+</button>
-        </div>
       </div>
-
-      <div class="col-lg-4 col-sm-6 cost">
+      <div class="col-lg-4 col-md-4">
         <p>小計</p>
+      </div>
+    </div> 
+
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-6 product-info">
+        <div class="back-to-product" @click="redirectProduct(product.id)">
+          <img :src="product.imgSrc">
+          <p class="product-name">{{ product.name }}</p>
+        </div> 
+      </div>
+      <div class="col-lg-4 col-md-4 col-6 quantity">
+        <div class="button-container">
+          <button type="button" class="remove btn" @click="removeFromCart()">-</button>
+          <div class="cart-total">
+            {{product_total}}
+          </div>
+          <button type="button" class="add btn" @click="addToCart()">+</button>
+        </div>
+        <div class="hide-cost">NT:{{ item_cost }}</div>
+      </div>
+      <div class="col-lg-4 col-md-4 cost">
         NT:{{ item_cost }}
       </div>
     </div> 
-  </div> -->
-  
-  <div class="content">
-    <table>
-      <thead>
-        <th colspan="5">購物車（{{ cart_total }}）</th>
-      </thead>
-        <tbody>
-          <tr class="table-title">
-            <td>商品資訊</td>
-            <td>數量</td>
-            <td>小計</td>
-          </tr>
-          <tr>
-            <td><img :src="product.imgSrc">{{ product.name }}</td>
-            <td>NT:{{ item_cost }}</td>
-          </tr>
-        </tbody>   
-    </table>
   </div>
 
 </template>
@@ -78,30 +68,40 @@ export default {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 5px;
     text-align: center;
-    justify-content: center;
+    padding: 2vh;
+    margin-bottom: 2vh;
+  
+    .product-info {
+      img {
+        width: 90px;
+        margin: 5px;
+      }
 
-    img {
-    width: 90px;
-    margin: 5px;
+      p {
+        display: inline;
+        line-height: 0;
+      }
     }
 
     .back-to-product {
       cursor: pointer;
     }
 
-    .button-container {
-      position: relative;
+
+    .quantity {
+      margin: auto;
+
+      .button-container {
       display: flex;
       width: 140px;
       border: 1px solid #eee;
       border-radius: 5px;
       justify-content: space-around;
       align-items: center;
-      overflow: hidden;
+      margin: auto;
 
       .cart-total  {
         width: 50px;
-        min-width: 0;
         text-align: center;
       }
 
@@ -109,15 +109,38 @@ export default {
         background: transparent;
         color: inherit;
         border: none;
-        display: inline-block;
         min-width: 0;
         text-align: center;
-        // line-height: 1;
 
         &:focus {
           outline: none;
         }
       }
+    }
+
+    .hide-cost {
+      margin-top: 20px;
+    }
+  }
+  .cost {
+    margin: auto;
+  }
+    
+  }
+
+  @media (max-width: 800px) {
+    .title {
+      display: none;
+    }
+
+    .cost {
+      display: none;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .hide-cost {
+      display: none;
     }
   }
   

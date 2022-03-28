@@ -93,5 +93,10 @@ export default {
       text-align: right;
     }
 
+    @media (max-width: 500px){
+      .pay-detail {
+        margin-top: 100px;
+      }
+    }
   }
 </style>

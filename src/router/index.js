@@ -3,7 +3,6 @@ import HomeView from '../views/HomeView.vue'
 import CartView from '../views/CartView.vue'
 import ProductView from '../views/ProductView.vue'
 import { auth } from '../firebase'
-import DressView from '../views/DressView.vue'
 
 const routes = [
   {
@@ -14,17 +13,17 @@ const routes = [
   {
     path: '/dress',
     name: 'Dress',
-    component: DressView
+    component: () => import('../views/category/DressView.vue')
   },
   {
     path: '/pants',
     name: 'Pants',
-    component: () => import('../views/PantsView.vue')
+    component: () => import('../views/category/PantsView.vue')
   },
   {
     path: '/tops',
     name: 'Tops',
-    component: () => import('../views/TopsView.vue')
+    component: () => import('../views/category/TopsView.vue')
   },
   {
     path: '/cart',
