@@ -1,5 +1,5 @@
 <template>
-  <div class="product-table">
+  <!-- <div class="product-table">
     <div class="row">
       <div class="col-lg-4 col-sm-12 product-info">
         <p>商品資訊</p>
@@ -24,8 +24,27 @@
         NT:{{ item_cost }}
       </div>
     </div> 
-  </div>
+  </div> -->
   
+  <div class="content">
+    <table>
+      <thead>
+        <th colspan="5">購物車（{{ cart_total }}）</th>
+      </thead>
+        <tbody>
+          <tr class="table-title">
+            <td>商品資訊</td>
+            <td>數量</td>
+            <td>小計</td>
+          </tr>
+          <tr>
+            <td><img :src="product.imgSrc">{{ product.name }}</td>
+            <td>NT:{{ item_cost }}</td>
+          </tr>
+        </tbody>   
+    </table>
+  </div>
+
 </template>
 
 <script>

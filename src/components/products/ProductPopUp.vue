@@ -3,16 +3,15 @@
   :class="{show: active}"
   @click="$emit('close-product-popup')" />
 
-  <div class="popup" :class="{show: active}">
-    <div class="popup-close" @click="$emit('close-product-popup')">
+  <div class="popup"
+  :class="{show: active}" >
+    <div class="popup-close"
+    @click="$emit('close-product-popup')">
       &times;
     </div>
     <ProductBox
     :product="product"
     v-if="product" />
-    <!-- <div v-if="product">
-      <p class="description">{{ product.description }}</p> 
-    </div> -->
   </div>
 </template>
 

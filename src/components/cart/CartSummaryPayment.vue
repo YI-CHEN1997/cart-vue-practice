@@ -22,19 +22,20 @@
         </select>
       </form>
     </div>
+
     <div class="col-lg-4 col-sm-12 right-card">
       <div class="row">
         <p class="col-6">小計:</p>
-        <p class="col-6">NT${{ price_total }}</p>
+        <p class="col-6 right">NT${{ price_total }}</p>
       </div>
       <div class="row">
         <p class="col-6">運費:</p>
-        <p class="col-6">NT$60</p>
+        <p class="col-6 right">NT$60</p>
       </div>
-
+      <hr>
       <div class="row">
         <p class="col-6">合計:</p>
-        <p class="col-6">NT${{ final_price }}</p>
+        <p class="col-6 right">NT${{ final_price }}</p>
       </div>
       
       <button class="view-product-button">結帳</button> 
@@ -57,12 +58,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .pay-detail {
-    margin: 20vh;
-  }
-  button {
-    // width: 35vw;
+    margin:5vh 1px 5vh 1px;
+
+    button {
+    width: 100%;
     font-size: 1rem ;
     color: white;
     border: 1px solid white;
@@ -71,20 +72,26 @@ export default {
     padding: 7px 10px 7px 10px;
     text-align: center;
   }
+  }
+  
 
   .left-card {
     padding: 2%;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 5px;
-    justify-content: center;
+    // margin-right: 5vh;
   }
+
   .right-card {
     padding: 2%;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 5px;
-    justify-content: center;
-    overflow: hidden;
+    
+    .right {
+      text-align: right;
+    }
+
   }
 </style>

@@ -3,12 +3,28 @@ import HomeView from '../views/HomeView.vue'
 import CartView from '../views/CartView.vue'
 import ProductView from '../views/ProductView.vue'
 import { auth } from '../firebase'
+import DressView from '../views/DressView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: HomeView
+  },
+  {
+    path: '/dress',
+    name: 'Dress',
+    component: DressView
+  },
+  {
+    path: '/pants',
+    name: 'Pants',
+    component: () => import('../views/PantsView.vue')
+  },
+  {
+    path: '/tops',
+    name: 'Tops',
+    component: () => import('../views/TopsView.vue')
   },
   {
     path: '/cart',

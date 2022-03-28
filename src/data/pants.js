@@ -1,4 +1,4 @@
-const items = [
+const pants = [
   {
     id:1,
     name: '雙釦黑色高腰牛仔褲',
@@ -23,16 +23,6 @@ const items = [
   },
   {
     id:3,
-    name: '皺摺A字黑色蛋糕短裙',
-    price: 630,
-    imgSrc: require('../assets/black-skirt.png'),
-    category: 'Jeans',
-    desc: 'lorem20',
-    amount: 0,
-    amountShow: 1,
-  },
-  {
-    id:4,
     name: '高腰折線西裝寬褲',
     price: 680,
     imgSrc: require('../assets/brown-pants.png'),
@@ -41,26 +31,6 @@ const items = [
     amount: 0,
     amountShow: 1,
   },
-  {
-    id:5,
-    name: '褶皺紋理翻領短袖上衣',
-    price: 590,
-    imgSrc: require('../assets/white-shirt.png'),
-    category: 'top',
-    desc: 'lorem20',
-    amount: 0,
-    amountShow: 1,
-  },
-  {
-    id:6,
-    name: '黑色短版皺摺V領上衣',
-    price: 510,
-    imgSrc: require('../assets/black-shirt.png'),
-    category: 'top',
-    desc: 'lorem20',
-    amount: 0,
-    amountShow: 1,
-  },
 ]
 
-export default items
+export default pants

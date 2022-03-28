@@ -14,13 +14,16 @@
         </div>
         <button type="button" class="add btn" @click="addToCart()">+</button>
       </div>
-      <button type="button" class="add-to-cart-btn" @click="$emit('close-product-popup')">加入購物車</button>
+      <button type="button"
+       class="add-to-cart-btn"
+       :class="{show: active}"
+       @click="$emit('close-product-popup')">加入購物車</button>
     </div>
   </div>
 </template>
 <script>
 export default {
-  props: ['product'],
+  props: ['product', 'active'],
   methods: {
     addToCart(){
       this.$store.commit('addToCart', this.product)

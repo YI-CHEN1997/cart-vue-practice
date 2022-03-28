@@ -15,8 +15,9 @@
       </div>
       <div>
          <router-link :class="{active: $router.name === 'Home'}" to="/">全部商品</router-link>
-         <router-link :class="{active: $router.name === 'Home'}" to="/">上衣</router-link>
-         <router-link :class="{active: $router.name === 'Home'}" to="/">褲子</router-link> 
+         <router-link :class="{active: $router.name === 'Tops'}" to="/tops">上衣</router-link>
+         <router-link :class="{active: $router.name === 'Pants'}" to="/pants">褲子</router-link> 
+         <router-link :class="{active: $router.name === 'Dress'}" to="/dress">裙裝</router-link> 
       </div>
  </div>
 </template>

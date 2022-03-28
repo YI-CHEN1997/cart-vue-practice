@@ -47,6 +47,7 @@ export default createStore({
 
       updateLocalStorage(state.cart)
     },
+
     removeFromCart (state, product){
       let item = state.cart.find(i => i.id === product.id)
 
@@ -75,7 +76,7 @@ export default createStore({
     },
     CLEAR_USER (state) {
       state.user = null
-    }
+    },
   },
 
   // 提交（commit）mutations ，而不是直接變更 state
@@ -148,7 +149,7 @@ export default createStore({
           }
         }
       })
-    }
+    },
   },
   modules: {
   }
