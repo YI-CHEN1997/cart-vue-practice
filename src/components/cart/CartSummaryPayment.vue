@@ -92,11 +92,11 @@ export default {
     .right {
       text-align: right;
     }
+  }
 
-    @media (max-width: 500px){
-      .pay-detail {
-        margin-top: 100px;
+  @media (max-width: 1000px){
+      .left-card {
+        margin-bottom: 5vh;
       }
     }
-  }
 </style>
