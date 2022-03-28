@@ -8,7 +8,7 @@
     <div class="products-container">
       <ProductSummary
       v-for="product in dress"
-      :key="product.category"
+      :key="product.id"
       :product="product"
       v-on:view-add-cart="viewAddCart" />
       <!-- methods（view-product是component $emit 傳過來的）-->
@@ -20,6 +20,7 @@
 
 <script>
 import dress from '@/data/dress.js'
+import items from '@/data/items.js'
 
 import ProductSummary from '../../components/products/ProductSummary.vue'
 import ProductPopUp from '../../components/products/ProductPopUp.vue'
@@ -33,6 +34,7 @@ export default {
     return {
       // 產品資料
       dress: dress,
+      items: items,
       product: null,
       active: {
         product_popup: false

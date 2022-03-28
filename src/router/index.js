@@ -1,14 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import CartView from '../views/CartView.vue'
-import ProductView from '../views/ProductView.vue'
 import { auth } from '../firebase'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomeView
+    component: () => import('../views/HomeView.vue')
   },
   {
     path: '/dress',
@@ -28,7 +25,7 @@ const routes = [
   {
     path: '/cart',
     name: 'Cart',
-    component: CartView,
+    component: () => import('../views/CartView.vue'),
     meta: {
       requiresAuth: true
     }
@@ -36,7 +33,7 @@ const routes = [
   {
     path: '/products/:productId',
     name: 'product',
-    component: ProductView,
+    component: () => import('../views/ProductView.vue')
   },
   {
     path: '/login',

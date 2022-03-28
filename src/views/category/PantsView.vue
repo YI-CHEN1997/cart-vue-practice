@@ -8,7 +8,7 @@
     <div class="products-container">
       <ProductSummary
       v-for="product in pants"
-      :key="product.category"
+      :key="product.id"
       :product="product"
       v-on:view-add-cart="viewAddCart" />
       <!-- methods（view-product是component $emit 傳過來的）-->

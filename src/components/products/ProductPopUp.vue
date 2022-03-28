@@ -48,7 +48,7 @@ export default {
     width: 80vw;
     height: 55vh;
     background-color: white;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -57,7 +57,7 @@ export default {
     transition: opacity .5s;
     z-index: 101;
     opacity: 0;
-
+    display: none;
 
     &.show {
       opacity: 1;

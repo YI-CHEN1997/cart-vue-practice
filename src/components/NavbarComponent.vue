@@ -1,12 +1,18 @@
 <template>
   <div class="top-nav">
-    <router-link :class="{active: $router.name === 'Cart'}" to="/cart">
+    <router-link to="/" class="top-nav-img">
+      <img src="../assets/logo-circle.png" alt="">
+    </router-link>
+
+    <div class="nav-icon">
+      <router-link :class="{active: $router.name === 'Cart'}" to="/cart">
       <i class="fas fa-shopping-cart"></i>
       <span class="cartQuantity">{{ cart_total }}</span>
-    </router-link>
-    <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-user"></i></router-link>
-    <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-comment"></i></router-link>
-    <!-- <button @click="$store.dispatch('logout')">Logout</button> -->
+      </router-link>
+      <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-user"></i></router-link>
+      <router-link :class="Sign_in" to="/login"><i class="fa-solid fa-comment"></i></router-link>
+      <!-- <button @click="$store.dispatch('logout')">Logout</button> -->
+    </div>
   </div>
   
   <div id="nav">  
@@ -44,7 +50,12 @@ export default {
     padding: 30px;
     margin-bottom: 20px;
     z-index: 101;
-    text-align: end;
+
+    .nav-icon {
+      display: inline;
+      float: right;
+    
+    }
 
     a {
     position: relative;
@@ -53,6 +64,10 @@ export default {
     text-decoration: none;
     margin: 0 20px 0 20px;
     font-size: .9rem;
+    }
+
+    img {
+      width: 50px;
     }
   }
 
@@ -93,6 +108,18 @@ export default {
     min-width: 100px;
     margin: 5px 10px 30px 10px;
     cursor: pointer;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .top-nav-img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #nav img {
+      display: none;
     }
   }
 

@@ -32,6 +32,7 @@
     text-align: center;
     background: #0000CC;
     padding: 50px;
+    margin-top: 10vh;
 
     p {
       font-size: 0.8rem;

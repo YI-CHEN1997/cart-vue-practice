@@ -20,7 +20,7 @@
 
 <script>
 // 產品資料（名稱、圖片、價格、介紹）下面要return {items: items}
-import items from '../data/items.js'
+import items from '@/data/items.js'
 
 import ProductSummary from '../components/products/ProductSummary.vue'
 import ProductPopUp from '../components/products/ProductPopUp.vue'

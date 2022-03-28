@@ -73,7 +73,7 @@ export default {
   }
 
   @media (min-width: 500px){
-    .card {
+    .product-card {
       width: 350px;
       margin: 10px;
     }
